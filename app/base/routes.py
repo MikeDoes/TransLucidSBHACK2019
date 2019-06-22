@@ -130,7 +130,7 @@ def not_found_error(error):
 def internal_error(error):
     return render_template('errors/page_500.html'), 500
 
-@blueprint.route('/transactions', methods=('GET', 'POST'))
+@app.route('/transactions', methods=['GET', 'POST'])
 def transactions():
     if request.method == 'POST':
         print(request.data)
