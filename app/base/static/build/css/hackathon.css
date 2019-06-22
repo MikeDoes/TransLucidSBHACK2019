@@ -1,0 +1,64 @@
+.site_title img {
+    display: block;
+    filter: invert(1) !important;
+    margin-right: auto;
+    width: 50%;
+}
+
+.site_title{
+    margin-left: 50px;
+}
+
+#entryAnimation{
+    width: 200px;
+    height: 200px;
+    background: red !important;
+    position: absolute;
+    animation: trains;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#entryAnimation i{
+    font-size: 5em;
+}
+
+
+
+@keyframes trains {
+    0% {
+      left: 0px;
+      top: 0px;
+      background-color: white;
+      border-radius: 0 0 0 0;
+    }
+    25% {
+      left: 80vw;
+      top: 20vh;
+      background-color: whitesmoke;
+      border-radius: 50% 0 0 0;
+    }
+    50% {
+      left: 0px;
+      top: 60vh;
+      background-color: grey;
+      border-radius: 50% 50% 0 0;
+    }
+    75% {
+      right: 0;
+      top: 80vh;
+      background-color: whitesmoke;
+      border-radius: 50% 50% 50% 0;
+    }
+    100% {
+      left: 0px;
+      top: 100vh;
+      background-color: white;
+      border-radius: 50% 50% 50% 50%;
+    }
+}
+
+
+
+
