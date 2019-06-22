@@ -4263,3 +4263,7 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 .row title_count {
     color:white!important;
 }
+
+.logo img {
+    width: 100%;
+}
