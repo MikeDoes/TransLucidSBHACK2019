@@ -132,5 +132,8 @@ def internal_error(error):
 
 @blueprint.route('/transactions', methods=('GET', 'POST'))
 def transactions():
-    print(request.data)
-    return '200'
+    if request.method == 'POST':
+        print(request.data)
+        return '200'
+    if request.method == 'GET':
+        return '200'
