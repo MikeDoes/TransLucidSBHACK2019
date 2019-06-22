@@ -33,7 +33,7 @@ def route_wallet():
     print(current_user.__dict__)
     return render_template('index2.html', user=current_user)
 
-@blueprint.route('/send_tokens')
+@blueprint.route('/send_tokens', methods=('GET', 'POST'))
 @login_required
 def route_send_tokens():
     if request.method == 'GET':
@@ -42,6 +42,7 @@ def route_send_tokens():
         return render_template('form_wizards.html', user=current_user, hash1=hashlib.sha1(str(random.randint(0,999999)).encode('ascii')).hexdigest())
     if request.method == 'POST':
         print(request.data)
+        return 200
 
 @blueprint.route('/block_explorer')
 def route_block():
@@ -128,3 +129,8 @@ def not_found_error(error):
 @blueprint.errorhandler(500)
 def internal_error(error):
     return render_template('errors/page_500.html'), 500
+
+@blueprint.route('/transactions', methods=('GET', 'POST'))
+def transactions():
+    print(request.data)
+    return '200'
