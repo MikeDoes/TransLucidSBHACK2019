@@ -13,7 +13,6 @@ class User(db.Model, UserMixin):
     email = Column(String, unique=True)
     password = Column(Binary)
     balance=Column(Integer)
-    publickey=Column(String)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

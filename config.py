@@ -3,7 +3,7 @@ from os import environ
 
 class Config(object):
     SECRET_KEY = 'key'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///database2.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///database666.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEFAULT_THEME = None
 

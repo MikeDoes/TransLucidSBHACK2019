@@ -12,9 +12,6 @@ from app.base import blueprint
 from app.base.forms import LoginForm, CreateAccountForm
 from app.base.models import User
 
-import hashlib
-import random
-
 
 @blueprint.route('/')
 def route_default():
@@ -30,22 +27,23 @@ def route_template(template):
 @blueprint.route('/wallet')
 @login_required
 def route_wallet():
-    print(current_user.__dict__)
+    user = User.query.filter_by(username=current_user.username).first()
+    user.balance = 20
+    db.session.commit()
+    print(current_user.balance)
     return render_template('index2.html', user=current_user)
 
 @blueprint.route('/send_tokens')
 @login_required
 def route_send_tokens():
-    if request.method == 'GET':
-        user = User.query.filter_by(username=current_user.username).first()
-        print(current_user.balance)
-        return render_template('form_wizards.html', user=current_user, hash1=hashlib.sha1(str(random.randint(0,999999)).encode('ascii')).hexdigest())
-    if request.method == 'POST':
-        print(request.data)
+    user = User.query.filter_by(username=current_user.username).first()
+    user.balance = 20
+    db.session.commit()
+    print(current_user.balance)
+    return render_template('form_wizards.html', user=current_user)
 
-@blueprint.route('/block_explorer')
-def route_block():
-    render_template('index3.html')
+
+
 
 @blueprint.route('/fixed_<template>')
 @login_required
@@ -84,9 +82,6 @@ def login():
 @blueprint.route('/create_user', methods=['POST'])
 def create_user():
     user = User(**request.form)
-    user.publickey =hashlib.sha1(str(random.randint(0,999999)).encode('ascii')).hexdigest()
-    user.balance = 20
-    db.session.commit()
     db.session.add(user)
     db.session.commit()
     return jsonify('success')
