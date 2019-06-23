@@ -32,3 +32,10 @@ The project is still in the developing stage. Some of the points that need work 
 
 
 Special Thanks for SBHACK for organising this event.
+
+
+LinkedIns:
+http://linkedin.com/in/mazourik/ 
+http://linkedin.com/in/jeremy-savor
+http://linkedin.com/in/marcelrapold/ 
+http://linkedin.com/in/ozguraksakal/ 
