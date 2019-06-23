@@ -5,7 +5,9 @@
 The goal of this blockchain application is to incentivise public transportations like trains over highly poluting air travel alternatives. Business travel is one of the biggest emission sources. 
 According to reseach, Business Class travel causes approximately 50% more carbon dioxide emissions!
 
-
+Useful Links:
+http://ec2-35-158-188-187.eu-central-1.compute.amazonaws.com:5000
+https://github.com/MikeDoes/TransLucidSBHACK2019
 
 Code Citation:<br>
 https://github.com/afourmy/flask-gentelella <br>
